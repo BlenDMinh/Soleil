@@ -49,7 +49,7 @@ const ProfileImage = () => {
 const LogoIcon = () => {
   return (
     <img
-      src="https://cryptologos.cc/logos/solana-sol-logo.svg?v=025"
+      src="src/assets/images/SSS.png"
       alt="Solana icon"
       className="w-full h-full"
     />
@@ -65,10 +65,10 @@ const LeftNavigator = (props: LeftNavigatorProp) => {
   return (
     <div className="sticky h-screen w-[15%] min-w-[15%] flex flex-col justify-between bg-white items-center top-0 shadow-xl">
       <div className="sticky h-full w-full flex flex-col items-center top-0">
-        <div className="w-1/3 ml-7 mr-7 mb-7 mt-14">
+        <div className="w-1/3 m-4 pt-6">
           <LogoIcon></LogoIcon>
         </div>
-        <div className="w-3/4 h-px justify-center bg-slate-200 m-6"></div>
+        <div className="w-3/4 h-px justify-center bg-slate-200 m-5"></div>
         <MenuButton
           isSelected={id == 0}
           icon={<IconAi.AiOutlineAppstore size="22" />}
@@ -99,7 +99,7 @@ const LeftNavigator = (props: LeftNavigatorProp) => {
         />
       </div>
       <div className="w-3/4 h-px justify-center bg-slate-200"></div>
-      <div className="mb-5">
+      <div className="m-5">
         <ProfileImage></ProfileImage>
       </div>
     </div>
