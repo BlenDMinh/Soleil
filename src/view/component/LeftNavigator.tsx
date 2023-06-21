@@ -14,7 +14,7 @@ const MenuButton = (props: MenuButtonProp) => {
   if (props.isSelected)
     return (
       <button
-        className="bg-purple-600 border-2 border-purple-600 rounded-lg drop-shadow-lg mt-3 shadow-purple-300 text-white font-bold w-1/2 justify-start items-start gap-1 flex flex-row p-2 transition hover:bg-white hover:text-purple-600"
+        className="bg-purple-700 border-2 border-purple-700 font-sans rounded-lg drop-shadow-2xl mt-3 shadow-purple-300 text-white font-bold w-1/2 justify-start items-start gap-1 flex flex-row p-2 transition hover:bg-white hover:text-purple-600"
         onClick={props.onClick}
       >
         {props.icon}
@@ -23,7 +23,7 @@ const MenuButton = (props: MenuButtonProp) => {
     );
   return (
     <button
-      className="rounded-lg text-gray-600 font-bold w-1/2 justify-start mt-3 items-start gap-1 flex flex-row p-2 transition hover:text-purple-600 border-white border-2 hover:border-purple-300"
+      className="rounded-lg text-gray-400 font-bold w-1/2 font-sans justify-start mt-3 items-start gap-1 flex flex-row p-2 transition hover:text-purple-600 border-white border-2 hover:border-purple-300"
       onClick={props.onClick}
     >
       {props.icon}
