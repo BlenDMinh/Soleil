@@ -5,14 +5,14 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Line } from "react-chartjs-2";
 
-function Home() {
+function Create() {
   return (
     <div className="h-full flex justify-start w-screen">
-      <LeftNavigator id={0} />
-      <div className="h-screen w-full bg-zinc-100"></div>
+      <LeftNavigator id={3} />
+      <div className="h-screen w-full bg-zinc-100">Create</div>
       <RightBidderList></RightBidderList>
     </div>
   );
 }
 
-export default Home;
+export default Create;

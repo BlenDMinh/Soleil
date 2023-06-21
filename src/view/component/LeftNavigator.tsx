@@ -2,21 +2,30 @@ import * as IconBi from "react-icons/bi";
 import * as IconGi from "react-icons/gi";
 import * as IconAi from "react-icons/ai";
 import * as IconMd from "react-icons/md";
+import * as IconFa from "react-icons/fa";
+import { useNavigate } from "react-router";
 interface MenuButtonProp {
   isSelected: boolean;
   icon?: any;
   text?: any;
+  onClick?: () => void;
 }
 const MenuButton = (props: MenuButtonProp) => {
   if (props.isSelected)
     return (
-      <button className="bg-purple-600 border-2 border-purple-600 rounded-lg drop-shadow-lg shadow-purple-300 text-white font-bold w-1/2 justify-start items-start gap-1 flex flex-row p-2 transition hover:bg-white hover:text-purple-600">
+      <button
+        className="bg-purple-600 border-2 border-purple-600 rounded-lg drop-shadow-lg mt-3 shadow-purple-300 text-white font-bold w-1/2 justify-start items-start gap-1 flex flex-row p-2 transition hover:bg-white hover:text-purple-600"
+        onClick={props.onClick}
+      >
         {props.icon}
         <div className="lg:block hidden">{props.text}</div>
       </button>
     );
   return (
-    <button className="rounded-lg text-gray-600 font-bold w-1/2 justify-start mt-3 items-start gap-1 flex flex-row p-2 transition hover:text-purple-600 border-white border-2 hover:border-purple-300">
+    <button
+      className="rounded-lg text-gray-600 font-bold w-1/2 justify-start mt-3 items-start gap-1 flex flex-row p-2 transition hover:text-purple-600 border-white border-2 hover:border-purple-300"
+      onClick={props.onClick}
+    >
       {props.icon}
       <div className="lg:block hidden">{props.text}</div>
     </button>
@@ -59,9 +68,14 @@ const LogoIcon = () => {
 interface LeftNavigatorProp {
   id: number;
 }
+// Home (Recommendation)
+// Donation
+// Auction
+// Developer
 
 const LeftNavigator = (props: LeftNavigatorProp) => {
   const id = props.id;
+  const navigate = useNavigate();
   return (
     <div className="sticky h-screen w-[15%] min-w-[15%] flex flex-col justify-between bg-white items-center top-0 shadow-xl">
       <div className="sticky h-full w-full flex flex-col items-center top-0">
@@ -73,29 +87,52 @@ const LeftNavigator = (props: LeftNavigatorProp) => {
           isSelected={id == 0}
           icon={<IconAi.AiOutlineAppstore size="22" />}
           text={"Home"}
+          onClick={() => {
+            navigate("/home");
+          }}
         />
         <MenuButton
           isSelected={id == 1}
           icon={<IconGi.GiEarthAmerica size="22" />}
-          text={"Explore"}
+          text={"Auction"}
+          onClick={() => {
+            navigate("/auction");
+          }}
         />
-
         <MenuButton
           isSelected={id == 2}
-          icon={<IconBi.BiLayerPlus size="22" />}
-          text={"Create"}
+          icon={<IconFa.FaDonate size="22" />}
+          text={"Donate"}
+          onClick={() => {
+            navigate("/donate");
+          }}
         />
 
         <MenuButton
           isSelected={id == 3}
-          icon={<IconMd.MdAccountCircle size="22" />}
-          text={"Profile"}
+          icon={<IconBi.BiLayerPlus size="22" />}
+          text={"Create"}
+          onClick={() => {
+            navigate("/create");
+          }}
         />
 
         <MenuButton
           isSelected={id == 4}
+          icon={<IconMd.MdDeveloperMode size="22" />}
+          text={"Dev"}
+          onClick={() => {
+            navigate("/");
+          }}
+        />
+
+        <MenuButton
+          isSelected={id == 5}
           icon={<IconBi.BiHelpCircle size="22" />}
           text={"Help"}
+          onClick={() => {
+            navigate("/help");
+          }}
         />
       </div>
       <div className="w-3/4 h-px justify-center bg-slate-200"></div>
