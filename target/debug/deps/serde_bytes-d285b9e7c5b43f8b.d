@@ -1,0 +1,11 @@
+/Users/chouchou/solei/target/debug/deps/serde_bytes-d285b9e7c5b43f8b.rmeta: /Users/chouchou/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_bytes-0.11.9/src/lib.rs /Users/chouchou/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_bytes-0.11.9/src/bytes.rs /Users/chouchou/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_bytes-0.11.9/src/de.rs /Users/chouchou/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_bytes-0.11.9/src/ser.rs /Users/chouchou/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_bytes-0.11.9/src/bytebuf.rs
+
+/Users/chouchou/solei/target/debug/deps/libserde_bytes-d285b9e7c5b43f8b.rlib: /Users/chouchou/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_bytes-0.11.9/src/lib.rs /Users/chouchou/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_bytes-0.11.9/src/bytes.rs /Users/chouchou/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_bytes-0.11.9/src/de.rs /Users/chouchou/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_bytes-0.11.9/src/ser.rs /Users/chouchou/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_bytes-0.11.9/src/bytebuf.rs
+
+/Users/chouchou/solei/target/debug/deps/serde_bytes-d285b9e7c5b43f8b.d: /Users/chouchou/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_bytes-0.11.9/src/lib.rs /Users/chouchou/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_bytes-0.11.9/src/bytes.rs /Users/chouchou/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_bytes-0.11.9/src/de.rs /Users/chouchou/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_bytes-0.11.9/src/ser.rs /Users/chouchou/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_bytes-0.11.9/src/bytebuf.rs
+
+/Users/chouchou/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_bytes-0.11.9/src/lib.rs:
+/Users/chouchou/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_bytes-0.11.9/src/bytes.rs:
+/Users/chouchou/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_bytes-0.11.9/src/de.rs:
+/Users/chouchou/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_bytes-0.11.9/src/ser.rs:
+/Users/chouchou/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_bytes-0.11.9/src/bytebuf.rs:

@@ -1,0 +1,25 @@
+{
+  "version": "0.1.0",
+  "name": "solei",
+  "instructions": [
+    {
+      "name": "solei",
+      "accounts": [
+        {
+          "name": "payer",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    }
+  ],
+  "metadata": {
+    "address": "8jXvG9wdujAedJ3cae4NyJkQseY6ziQrr85ZKVzh4u2o"
+  }
+}
