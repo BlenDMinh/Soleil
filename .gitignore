@@ -1,3 +1,10 @@
+
+.anchor
+.DS_Store
+target
+**/*.rs.bk
+node_modules
+test-ledger
 # Logs
 logs
 *.log
@@ -22,3 +29,4 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+

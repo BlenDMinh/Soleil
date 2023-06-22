@@ -6,6 +6,7 @@ import axios from "axios";
 import { Line } from "react-chartjs-2";
 import App from "../App";
 import Auction from "./Auction";
+import AnchorService from "../../service/AnchorService";
 
 interface AuctionItemProp {
   isSelected?: boolean;
@@ -24,8 +25,10 @@ const AuctionItem = (props: AuctionItemProp) => {
     </button>
   );
 };
+
 function Home() {
   const navigate = useNavigate();
+  const a = AnchorService.getInstance().test();
   return (
     <App id={0}>
       <div className="h-full w-full flex flex-col items-center bg-zinc-100 p-16">
