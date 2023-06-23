@@ -59,9 +59,9 @@ const NewActivity = (props: NewActivityInfo) => {
 
 const RightBidderList = () => {
   return (
-    <div className="sticky h-full w-[24%] min-w-[24%] hidden md:block flex-col justify-center items-center bg-white top-0 right-0">
-      <div className="h-full w-full flex flex-col items-start top-0">
-        <div className="flex  items-center justify-between">
+    <div className="sticky w-[24%] min-w-[24%] hidden md:block flex-col justify-center items-center bg-white top-0 right-0">
+      <div className="w-full flex flex-col items-start">
+        <div className="flex items-center justify-between">
           <div className="text-black sticky font-semibold text-2xl">
             Wallet:
           </div>
@@ -70,7 +70,7 @@ const RightBidderList = () => {
         <div className="text-black sticky font-semibold text-2xl m-8">
           Top Bidder
         </div>
-        <div className="h-full w-full flex items-center flex-col">
+        <div className="w-full flex items-center flex-col">
           <div className="w-1/2 h-px items-center bg-slate-200"></div>
           <div className="m-6 w-11/12">
             <Bidder

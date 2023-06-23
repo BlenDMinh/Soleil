@@ -4,7 +4,6 @@ import * as IconAi from "react-icons/ai";
 import * as IconMd from "react-icons/md";
 import * as IconFa from "react-icons/fa";
 import { useNavigate } from "react-router";
-import WalletButton from "./WalletButton";
 interface MenuButtonProp {
   isSelected: boolean;
   icon?: any;
@@ -78,8 +77,8 @@ const LeftNavigator = (props: LeftNavigatorProp) => {
   const id = props.id;
   const navigate = useNavigate();
   return (
-    <div className="sticky h-screen w-[15%] min-w-[15%] flex flex-col justify-between bg-white items-center top-0 shadow-xl">
-      <div className="sticky h-full w-full flex flex-col items-center top-0">
+    <div className="sticky h-full min-h-screen w-[15%] min-w-[15%] flex flex-col justify-between bg-white items-center top-0 shadow-xl">
+      <div className="h-full w-full flex flex-col items-center top-0">
         <div className="w-1/3 m-4 pt-6">
           <LogoIcon></LogoIcon>
         </div>

@@ -15,17 +15,19 @@ const App = (props: AppProps) => {
   const navigate = useNavigate();
   const anchorWallet = useAnchorWallet();
 
-  useEffect(() => {
-    userService.wallet = anchorWallet;
-    if (!userService.wallet) {
-      navigate("/welcome");
-    }
-  }, [anchorWallet]);
+  // useEffect(() => {
+  //   userService.wallet = anchorWallet;
+  //   if (!userService.wallet) {
+  //     navigate("/welcome");
+  //   }
+  // }, [anchorWallet]);
   return (
     <div className="h-full flex justify-start w-full">
       <LeftNavigator id={props.id} />
-      <div className="h-full w-full bg-zinc-100">{props.children}</div>
-      <RightBidderList></RightBidderList>
+      <div className="h-full min-h-screen w-full bg-zinc-100">
+        {props.children}
+      </div>
+      {/* <RightBidderList /> */}
     </div>
   );
 };

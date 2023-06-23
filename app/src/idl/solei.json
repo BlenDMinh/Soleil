@@ -1,0 +1,84 @@
+{
+  "version": "0.1.0",
+  "name": "solei",
+  "constants": [
+    {
+      "name": "USER_SEED",
+      "type": "bytes",
+      "value": "[115, 111, 108, 101, 105, 108, 95, 117, 115, 101, 114]"
+    }
+  ],
+  "instructions": [
+    {
+      "name": "solei",
+      "accounts": [
+        {
+          "name": "payer",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "createUser",
+      "accounts": [
+        {
+          "name": "userAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "authority",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "avatarImage",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "UserAccount",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "avatarImage",
+            "type": "string"
+          },
+          {
+            "name": "authority",
+            "type": "publicKey"
+          }
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "address": "8jXvG9wdujAedJ3cae4NyJkQseY6ziQrr85ZKVzh4u2o"
+  }
+}
