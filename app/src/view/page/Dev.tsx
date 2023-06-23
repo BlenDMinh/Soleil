@@ -17,12 +17,6 @@ function Dev() {
 
   const anchorWallet = useAnchorWallet();
 
-  useEffect(() => {
-    userService.wallet = anchorWallet;
-    if (!userService.wallet) {
-      navigate("/welcome");
-    }
-  }, [anchorWallet]);
   return (
     <App id={4}>
       <div className="h-full w-full flex flex-col items-center bg-zinc-100 p-20 gap-10">

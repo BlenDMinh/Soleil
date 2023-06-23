@@ -12,47 +12,33 @@
     {
       "name": "solei",
       "accounts": [
-        {
-          "name": "payer",
-          "isMut": true,
-          "isSigner": true
-        },
-        {
-          "name": "systemProgram",
-          "isMut": false,
-          "isSigner": false
-        }
+        { "name": "payer", "isMut": true, "isSigner": true },
+        { "name": "systemProgram", "isMut": false, "isSigner": false }
       ],
       "args": []
     },
     {
       "name": "createUser",
       "accounts": [
-        {
-          "name": "userAccount",
-          "isMut": true,
-          "isSigner": false
-        },
-        {
-          "name": "authority",
-          "isMut": true,
-          "isSigner": true
-        },
-        {
-          "name": "systemProgram",
-          "isMut": false,
-          "isSigner": false
-        }
+        { "name": "userAccount", "isMut": true, "isSigner": false },
+        { "name": "authority", "isMut": true, "isSigner": true },
+        { "name": "systemProgram", "isMut": false, "isSigner": false }
       ],
       "args": [
-        {
-          "name": "name",
-          "type": "string"
-        },
-        {
-          "name": "avatarImage",
-          "type": "string"
-        }
+        { "name": "name", "type": "string" },
+        { "name": "avatarImage", "type": "string" }
+      ]
+    },
+    {
+      "name": "editUser",
+      "accounts": [
+        { "name": "userAccount", "isMut": true, "isSigner": false },
+        { "name": "authority", "isMut": true, "isSigner": true },
+        { "name": "systemProgram", "isMut": false, "isSigner": false }
+      ],
+      "args": [
+        { "name": "name", "type": "string" },
+        { "name": "avatarImage", "type": "string" }
       ]
     }
   ],
@@ -62,23 +48,14 @@
       "type": {
         "kind": "struct",
         "fields": [
-          {
-            "name": "name",
-            "type": "string"
-          },
-          {
-            "name": "avatarImage",
-            "type": "string"
-          },
-          {
-            "name": "authority",
-            "type": "publicKey"
-          }
+          { "name": "name", "type": "string" },
+          { "name": "avatarImage", "type": "string" },
+          { "name": "authority", "type": "publicKey" }
         ]
       }
     }
   ],
   "metadata": {
-    "address": "8jXvG9wdujAedJ3cae4NyJkQseY6ziQrr85ZKVzh4u2o"
+    "address": "amiomHiY7zSrY8Y1bkXhhAe4mUnanGSkeduNhk4mk4N"
   }
 }

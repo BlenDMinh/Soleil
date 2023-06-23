@@ -4,6 +4,8 @@ import * as IconAi from "react-icons/ai";
 import * as IconMd from "react-icons/md";
 import * as IconFa from "react-icons/fa";
 import { useNavigate } from "react-router";
+import { useUser } from "../../context/UserContext";
+import { useEffect } from "react";
 interface MenuButtonProp {
   isSelected: boolean;
   icon?: any;
@@ -33,18 +35,19 @@ const MenuButton = (props: MenuButtonProp) => {
 };
 
 const ProfileImage = () => {
+  const { user } = useUser();
+  useEffect(() => {}, [user]);
   return (
     <div>
       <button className="rounded-full bg-white justify-start items-start gap-1 flex flex-row">
         <img
-          src="src/assets/images/ava-03.png"
+          src={user?.avatarImage ?? ""}
           alt="Profile Image"
           className="w-10 h-10 rounded-full shadow-xl"
         />
         <div>
           <div className="text-sm text-black font-serif font-semibold lg:block hidden">
-            {" "}
-            Huynh Hai Dang
+            {user?.name ?? "Anonymous"}
           </div>
           <div className="text-xs text-gray-500 font-serif font-thin lg:block hidden">
             Developer

@@ -5,16 +5,20 @@ import { LAMPORTS_PER_SOL, PublicKey } from "@solana/web3.js";
 import "react-activity/dist/library.css";
 import { Spinner } from "react-activity";
 import { Divider } from "@fluentui/react-divider";
+import { useAnchorWallet } from "@solana/wallet-adapter-react";
 
 const AccountInfo = () => {
   const userService = UserService.getInstance();
   const solanaService = SolanaService.getInstance();
   const [balance, setBalance] = useState(-1);
+  const anchorWallet = useAnchorWallet();
   useEffect(() => {
+    userService.wallet = anchorWallet;
+    if (!userService.wallet) return;
     userService.getBalance().then((balance) => {
       setBalance(balance);
     });
-  }, []);
+  }, [anchorWallet]);
   if (!userService.wallet) return <div></div>;
   return (
     <div className="bg-white shadow-xl rounded-lg w-full h-fit p-10 flex flex-col justify-between gap-5">

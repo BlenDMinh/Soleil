@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useMemo } from "react";
+import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import idl from "../idl/solei.json";
 import {
   useAnchorWallet,
@@ -9,6 +9,7 @@ import { AnchorProvider, Idl, Program } from "@project-serum/anchor";
 import { findProgramAddressSync } from "@project-serum/anchor/dist/cjs/utils/pubkey";
 import { SystemProgram } from "@solana/web3.js";
 import { utf8 } from "@project-serum/anchor/dist/cjs/utils/bytes";
+import { User } from "../model/User";
 
 const UserContext = createContext();
 
@@ -22,9 +23,7 @@ export const useUser = () => {
 };
 
 export const UserProvider = ({ children }: any) => {
-  const user = {
-    name: "Anh Minh",
-  };
+  const [user, setUser] = useState<User>();
   const anchorWallet = useAnchorWallet();
   const { connection } = useConnection();
   const { publicKey } = useWallet();
@@ -49,6 +48,7 @@ export const UserProvider = ({ children }: any) => {
             program.programId
           );
           const user = await program.account.userAccount.fetch(pda);
+          setUser(user as User);
           console.log(user);
         } catch (e) {
           console.log("User not found", e);
@@ -62,8 +62,6 @@ export const UserProvider = ({ children }: any) => {
     });
   }, [connection, anchorWallet]);
 
-  console.log(program?.account);
-
   const createUser = async (name: string, avatar: string) => {
     if (program && publicKey) {
       const [pda] = findProgramAddressSync(
@@ -71,19 +69,37 @@ export const UserProvider = ({ children }: any) => {
         program.programId
       );
 
-      await program.methods
-        .createUser(name, avatar)
-        .accounts({
-          userAccount: pda,
-          authority: publicKey,
-          systemProgram: SystemProgram.programId,
-        })
-        .rpc();
+      const call = program.methods.createUser(name, avatar).accounts({
+        userAccount: pda,
+        authority: publicKey,
+        systemProgram: SystemProgram.programId,
+      });
+      console.log(pda, publicKey, SystemProgram.programId, name, avatar);
+      console.log(call);
+      call.rpc();
+    }
+  };
+
+  const editUser = async (name: string, avatar: string) => {
+    if (program && publicKey) {
+      const [pda] = findProgramAddressSync(
+        [utf8.encode("soleil_user"), publicKey.toBuffer()],
+        program.programId
+      );
+
+      const call = program.methods.editUser(name, avatar).accounts({
+        userAccount: pda,
+        authority: publicKey,
+        systemProgram: SystemProgram.programId,
+      });
+      console.log(pda, publicKey, SystemProgram.programId, name, avatar);
+      console.log(call);
+      call.rpc();
     }
   };
 
   return (
-    <UserContext.Provider value={{ user, createUser }}>
+    <UserContext.Provider value={{ user, createUser, editUser }}>
       {children}
     </UserContext.Provider>
   );
