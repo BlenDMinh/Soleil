@@ -4,6 +4,7 @@ import * as IconAi from "react-icons/ai";
 import * as IconMd from "react-icons/md";
 import * as IconFa from "react-icons/fa";
 import { useNavigate } from "react-router";
+import WalletButton from "./WalletButton";
 interface MenuButtonProp {
   isSelected: boolean;
   icon?: any;
@@ -82,13 +83,14 @@ const LeftNavigator = (props: LeftNavigatorProp) => {
         <div className="w-1/3 m-4 pt-6">
           <LogoIcon></LogoIcon>
         </div>
+
         <div className="w-3/4 h-px justify-center bg-slate-200 m-5"></div>
         <MenuButton
           isSelected={id == 0}
           icon={<IconAi.AiOutlineAppstore size="22" />}
           text={"Home"}
           onClick={() => {
-            navigate("/home");
+            navigate("/");
           }}
         />
         <MenuButton
@@ -122,7 +124,7 @@ const LeftNavigator = (props: LeftNavigatorProp) => {
           icon={<IconMd.MdDeveloperMode size="22" />}
           text={"Dev"}
           onClick={() => {
-            navigate("/");
+            navigate("/dev");
           }}
         />
 
