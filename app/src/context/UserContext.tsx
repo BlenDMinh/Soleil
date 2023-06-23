@@ -8,6 +8,7 @@ import {
 import { AnchorProvider, Idl, Program } from "@project-serum/anchor";
 import { findProgramAddressSync } from "@project-serum/anchor/dist/cjs/utils/pubkey";
 import { SystemProgram } from "@solana/web3.js";
+import { utf8 } from "@project-serum/anchor/dist/cjs/utils/bytes";
 
 const UserContext = createContext();
 
@@ -44,15 +45,7 @@ export const UserProvider = ({ children }: any) => {
       if (program && publicKey) {
         try {
           const [pda] = await findProgramAddressSync(
-            [
-              Uint8Array.from(
-                JSON.parse(
-                  idl.constants.find((e) => e.name == "USER_SEED")?.value ??
-                    "[]"
-                )
-              ),
-              publicKey.toBuffer(),
-            ],
+            [utf8.encode("soleil_user"), publicKey.toBuffer()],
             program.programId
           );
           const user = await program.account.userAccount.fetch(pda);
@@ -73,15 +66,8 @@ export const UserProvider = ({ children }: any) => {
 
   const createUser = async (name: string, avatar: string) => {
     if (program && publicKey) {
-      const [pda] = await findProgramAddressSync(
-        [
-          Uint8Array.from(
-            JSON.parse(
-              idl.constants.find((e) => e.name == "USER_SEED")?.value ?? "[]"
-            )
-          ),
-          publicKey.toBuffer(),
-        ],
+      const [pda] = findProgramAddressSync(
+        [utf8.encode("soleil_user"), publicKey.toBuffer()],
         program.programId
       );
 
@@ -89,8 +75,8 @@ export const UserProvider = ({ children }: any) => {
         .createUser(name, avatar)
         .accounts({
           userAccount: pda,
-          // authority: publicKey,
-          // systemProgram: SystemProgram.programId,
+          authority: publicKey,
+          systemProgram: SystemProgram.programId,
         })
         .rpc();
     }
