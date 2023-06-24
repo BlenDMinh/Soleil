@@ -1,12 +1,6 @@
-import LeftNavigator from "../component/LeftNavigator";
-import RightBidderList from "../component/RightBidderList";
 import { useNavigate } from "react-router";
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { Line } from "react-chartjs-2";
+import React from "react";
 import App from "../App";
-import Auction from "./Auction";
-import AnchorService from "../../service/AnchorService";
 import * as IconFa from "react-icons/fa";
 import * as IconAi from "react-icons/ai";
 import Modal from "react-modal";

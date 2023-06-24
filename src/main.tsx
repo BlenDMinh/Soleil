@@ -12,6 +12,7 @@ import Create from "./view/page/Create.tsx";
 import Help from "./view/page/Help.tsx";
 import { UserProvider } from "./context/UserContext.tsx";
 import CreateUser from "./view/page/CreateUser.tsx";
+import EditProfile from "./view/page/EditProfile.tsx";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+  },
+  {
+    path: "/profile/edit",
+    element: <EditProfile />,
   },
   {
     path: "/auction",

@@ -36,10 +36,16 @@ const MenuButton = (props: MenuButtonProp) => {
 
 const ProfileImage = () => {
   const { user } = useUser();
+  const navigate = useNavigate();
   useEffect(() => {}, [user]);
   return (
     <div>
-      <button className="rounded-full bg-white justify-start items-start gap-1 flex flex-row">
+      <button
+        className="rounded-full bg-white justify-start items-start gap-1 flex flex-row"
+        onClick={() => {
+          navigate("/profile/edit");
+        }}
+      >
         <img
           src={
             user?.avatarImage ??
@@ -64,7 +70,7 @@ const ProfileImage = () => {
 const LogoIcon = () => {
   return (
     <img
-      src="src/assets/images/SSS.png"
+      src="/src/assets/images/SSS.png"
       alt="Solana icon"
       className="w-full h-full"
     />

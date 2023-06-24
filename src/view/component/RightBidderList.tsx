@@ -75,28 +75,28 @@ const RightBidderList = () => {
           <div className="m-6 w-11/12">
             <Bidder
               name="Anh Minh"
-              image="src/assets/images/ava-01.png"
+              image="/src/assets/images/ava-01.png"
               lastTimeUpdated="2"
               transactionMoney={300}
             ></Bidder>
             <div className="w-3/4 h-px items-center bg-slate-200 ml-16"></div>
             <Bidder
               name="Diem Hoang"
-              image="src/assets/images/ava-02.png"
+              image="/src/assets/images/ava-02.png"
               lastTimeUpdated="2"
               transactionMoney={400}
             ></Bidder>
             <div className="w-3/4 h-px items-center bg-slate-200 ml-16"></div>
             <Bidder
               name="Trung Hieu"
-              image="src/assets/images/ava-04.png"
+              image="/src/assets/images/ava-04.png"
               lastTimeUpdated="2"
               transactionMoney={320}
             ></Bidder>
             <div className="w-3/4 h-px items-center bg-slate-200 ml-16"></div>
             <Bidder
               name="Thanh Vinh"
-              image="src/assets/images/ava-05.png"
+              image="/src/assets/images/ava-05.png"
               lastTimeUpdated="2"
               transactionMoney={308}
             ></Bidder>
@@ -109,18 +109,18 @@ const RightBidderList = () => {
             <NewActivity
               title="New Bid Appeared"
               content="Dang Ngoc Nam has placed higher bid on this postasdfadf"
-              image="src/assets/images/icons8-billing-64.png"
+              image="/src/assets/images/icons8-billing-64.png"
             ></NewActivity>
 
             <NewActivity
               title="New Donation Appeared"
               content="Backychos just made a donation"
-              image="src/assets/images/icons8-donate-64.png"
+              image="/src/assets/images/icons8-donate-64.png"
             ></NewActivity>
             <NewActivity
               title="New Auction Appeared"
               content="NiggaIsStarving just made an auction"
-              image="src/assets/images/icons8-check-dollar-48.png"
+              image="/src/assets/images/icons8-check-dollar-48.png"
             ></NewActivity>
           </div>
         </div>
@@ -133,18 +133,18 @@ const RightBidderList = () => {
             <NewActivity
               title="New Bid Appeared"
               content="Dang Ngoc Nam has placed higher bid on this postasdfadf"
-              image="src/assets/images/icons8-billing-64.png"
+              image="/src/assets/images/icons8-billing-64.png"
             ></NewActivity>
 
             <NewActivity
               title="New Donation Appeared"
               content="Backychos just made a donation"
-              image="src/assets/images/icons8-donate-64.png"
+              image="/src/assets/images/icons8-donate-64.png"
             ></NewActivity>
             <NewActivity
               title="New Auction Appeared"
               content="NiggaIsStarving just made an auction"
-              image="src/assets/images/icons8-check-dollar-48.png"
+              image="/src/assets/images/icons8-check-dollar-48.png"
             ></NewActivity>
           </div>
         </div>*/}

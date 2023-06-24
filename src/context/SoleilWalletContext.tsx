@@ -15,6 +15,10 @@ import {
   useState,
 } from "react";
 
+function wait(milliseconds: number) {
+  return new Promise((resolve) => setTimeout(resolve, milliseconds));
+}
+
 const WalletContext = createContext<{
   isInit?: boolean;
 }>({});

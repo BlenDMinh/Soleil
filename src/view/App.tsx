@@ -1,10 +1,11 @@
-import { useAnchorWallet } from "@solana/wallet-adapter-react";
+import { useAnchorWallet, useWallet } from "@solana/wallet-adapter-react";
 import LeftNavigator from "./component/LeftNavigator";
 import RightBidderList from "./component/RightBidderList";
-import { useEffect } from "react";
-import { useNavigate } from "react-router";
+import { useEffect, useRef, useState } from "react";
+import { useLocation, useNavigate } from "react-router";
 import UserService from "../service/UserService";
 import { useUser } from "../context/UserContext";
+import { useWalletModal } from "@solana/wallet-adapter-react-ui";
 
 interface AppProps {
   children: any;
@@ -15,13 +16,30 @@ const App = (props: AppProps) => {
   const userService = UserService.getInstance();
   const navigate = useNavigate();
   const anchorWallet = useAnchorWallet();
+  const [timeoutEvent, setTimeoutEvent] = useState<NodeJS.Timeout>();
+  const location = useLocation();
+
+  const { connected } = useWallet();
+
+  useEffect(() => {
+    console.log("Wallet connection: ", connected);
+    if (!connected) return;
+    if (location.pathname == "/welcome") return;
+    return () => {
+      if (!anchorWallet) {
+        console.log("Wallet is not connected");
+        navigate("/welcome");
+      }
+    };
+  }, [connected]);
 
   const { isUserInit } = useUser();
 
   useEffect(() => {
+    // console.log(timeoutEvent);
     const start = async () => {
       userService.wallet = anchorWallet;
-      if (!anchorWallet) navigate("/welcome");
+      // console.log(anchorWallet);
     };
     start();
   }, [anchorWallet]);

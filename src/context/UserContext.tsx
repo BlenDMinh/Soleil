@@ -7,19 +7,27 @@ import {
 } from "@solana/wallet-adapter-react";
 import { AnchorProvider, Idl, Program } from "@project-serum/anchor";
 import { findProgramAddressSync } from "@project-serum/anchor/dist/cjs/utils/pubkey";
-import { SystemProgram } from "@solana/web3.js";
+import { SystemProgram, TransactionResponse } from "@solana/web3.js";
 import { utf8 } from "@project-serum/anchor/dist/cjs/utils/bytes";
 import { User } from "../model/User";
 
+const MAX_PING = 5;
+
 const UserContext = createContext<{
   user?: User;
-  createUser: (name: string, avatar: string) => Promise<string | undefined>;
-  editUser: (name: string, avatar: string) => Promise<void>;
+  createUser: (
+    name: string,
+    avatar: string
+  ) => Promise<TransactionResponse | undefined>;
+  editUser: (
+    name: string,
+    avatar: string
+  ) => Promise<TransactionResponse | undefined>;
   isUserInit?: boolean;
   onTrans: boolean;
 }>({
   createUser: async () => undefined,
-  editUser: async () => {},
+  editUser: async () => undefined,
   onTrans: false,
 });
 
@@ -79,7 +87,7 @@ export const UserProvider = ({ children }: any) => {
   }, [connection, anchorWallet, onTrans]);
 
   const createUser = async (name: string, avatar: string) => {
-    setOnTrans(false);
+    setOnTrans(true);
     if (program && publicKey) {
       const [pda] = findProgramAddressSync(
         [utf8.encode("soleil_user"), publicKey.toBuffer()],
@@ -92,14 +100,21 @@ export const UserProvider = ({ children }: any) => {
         systemProgram: SystemProgram.programId,
       });
       console.log(pda, publicKey, SystemProgram.programId, name, avatar);
-      return call.rpc().then((context) => {
-        setOnTrans(true);
-        return context;
+      return call.rpc().then(async (signature) => {
+        for (let time = 0; time < MAX_PING; time++) {
+          const trans = await connection.getTransaction(signature);
+          if (trans) {
+            setOnTrans(false);
+            return trans;
+          }
+        }
+        setOnTrans(false);
       });
     }
   };
 
   const editUser = async (name: string, avatar: string) => {
+    setOnTrans(true);
     if (program && publicKey) {
       const [pda] = findProgramAddressSync(
         [utf8.encode("soleil_user"), publicKey.toBuffer()],
@@ -111,9 +126,16 @@ export const UserProvider = ({ children }: any) => {
         authority: publicKey,
         systemProgram: SystemProgram.programId,
       });
-      console.log(pda, publicKey, SystemProgram.programId, name, avatar);
-      console.log(call);
-      call.rpc();
+      return call.rpc().then(async (signature) => {
+        for (let time = 0; time < MAX_PING; time++) {
+          const trans = await connection.getTransaction(signature);
+          if (trans) {
+            setOnTrans(false);
+            return trans;
+          }
+        }
+        setOnTrans(false);
+      });
     }
   };
 
