@@ -27,7 +27,7 @@ const App = (props: AppProps) => {
       <div className="h-full min-h-screen w-full bg-zinc-100">
         {props.children}
       </div>
-      {/* <RightBidderList /> */}
+      <RightBidderList />
     </div>
   );
 };
