@@ -1,4 +1,4 @@
-import React from "react";
+import WalletButton from "./WalletButton";
 
 interface BidderInfoProp {
   name: string;
@@ -8,7 +8,7 @@ interface BidderInfoProp {
 }
 const Bidder = (props: BidderInfoProp) => {
   return (
-    <div className=" flex flex-row justify-between  w-full px-25 pt-4 m-2">
+    <div className=" flex w-full flex-row justify-between">
       <div className="flex flex-row">
         <img
           src={props.image}
@@ -39,21 +39,19 @@ interface NewActivityInfo {
 
 const NewActivity = (props: NewActivityInfo) => {
   return (
-    <div className=" flex flex-row m-2 justify-between px-25 pt-4">
-      <div className="flex flex-row">
-        <img
-          src={props.image}
-          alt="Bidder information"
-          className="w-10 h-10 rounded-full mr-2"
-        ></img>
-        <div className=" flex-col justify-start items-start">
-          <div className="text-sm text-black font-serif font-semibold lg:block hidden">
-            {props.title}
-          </div>
-          <div className="text-xs text-gray-500 font-serif font-thin lg:block hidden break-word">
-            {props.content}
-          </div>
+    <div className=" flex flex-row w-full">
+      <img
+        src={props.image}
+        alt="Bidder information"
+        className="w-10 h-10 rounded-full"
+      ></img>
+      <div className="flex flex-col">
+        <div className="text-sm text-black font-serif font-semibold lg:block hidden break-words w-11/12">
+          {props.title}
         </div>
+        {/*<div className="text-xs text-gray-500 font-serif font-thin lg:block hidden break-words w-fit">
+          {props.content}
+        </div>*/}
       </div>
     </div>
   );
@@ -61,14 +59,20 @@ const NewActivity = (props: NewActivityInfo) => {
 
 const RightBidderList = () => {
   return (
-    <div className="sticky h-screen w-[24%] min-w-[24%] hidden md:block flex-col justify-center items-center bg-white top-0 right-0">
-      <div className="h-full w-fit flex flex-col items-start top-0">
+    <div className="sticky w-[24%] min-w-[24%] hidden md:block flex-col justify-center items-center bg-white top-0 right-0">
+      <div className="w-full flex flex-col items-start">
+        <div className="flex items-center justify-between">
+          <div className="text-black sticky font-semibold text-2xl">
+            Wallet:
+          </div>
+          <WalletButton />
+        </div>
         <div className="text-black sticky font-semibold text-2xl m-8">
           Top Bidder
         </div>
-        <div className="h-full w-fit">
-          <div className="w-11/12 h-px items-center bg-slate-200 ml-10"></div>
-          <div className="m-4">
+        <div className="w-full flex items-center flex-col">
+          <div className="w-1/2 h-px items-center bg-slate-200"></div>
+          <div className="m-6 w-11/12">
             <Bidder
               name="Anh Minh"
               image="src/assets/images/ava-01.png"
@@ -98,10 +102,10 @@ const RightBidderList = () => {
             ></Bidder>
             <div className="w-3/4 h-px items-center bg-slate-200 ml-16"></div>
           </div>
-          <div className="text-black sticky font-semibold text-2xl ml-8">
+          <div className="text-black sticky font-semibold text-2xl ml-8 w-11/12">
             Activity
           </div>
-          <div className="m-6">
+          <div className="w-full">
             <NewActivity
               title="New Bid Appeared"
               content="Dang Ngoc Nam has placed higher bid on this postasdfadf"
