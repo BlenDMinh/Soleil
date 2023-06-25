@@ -16,7 +16,7 @@ const MenuButton = (props: MenuButtonProp) => {
   if (props.isSelected)
     return (
       <button
-        className="bg-purple-700 border-2 border-purple-700 font-sans rounded-lg drop-shadow-2xl mt-3 shadow-purple-300 text-white font-bold w-1/2 justify-start items-start gap-1 flex flex-row p-2 transition hover:bg-white hover:text-purple-600"
+        className="bg-purple-700 border-2 border-purple-700 font-sans rounded-lg drop-shadow-xl mt-3 shadow-purple-300 text-white font-bold w-1/2 justify-start items-start gap-1 flex flex-row p-2 transition hover:bg-white hover:text-purple-600"
         onClick={props.onClick}
       >
         {props.icon}

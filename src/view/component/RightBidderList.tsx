@@ -63,12 +63,13 @@ const RightBidderList = () => {
   return (
     <div className="sticky top-0 w-[24%] min-w-[24%] h-full min-h-screen hidden md:block flex-col justify-center items-center bg-white shadow-xl">
       <div className="w-full flex flex-col items-start px-5">
-        <div className="text-black sticky font-semibold text-2xl mt-8">
-          Wallet
+        <div className="text-black sticky font-semibold text-2xl mt-8 flex flex-row justify-between w-full">
+          <div className="mt-2">Wallet:</div>
+          <div className="pl-7 w-full">
+            <WalletButton />
+          </div>
         </div>
-        <div className="mt-8 px-8 w-full">
-          <WalletButton />
-        </div>
+
         <div className="text-black sticky font-semibold text-2xl mt-8">
           Top Bidder
         </div>
