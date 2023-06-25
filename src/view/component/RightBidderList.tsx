@@ -65,7 +65,7 @@ const RightBidderList = () => {
       <div className="w-full flex flex-col items-start px-5">
         <div className="text-black sticky font-semibold text-2xl mt-8 flex flex-row justify-between w-full">
           <div className="mt-2">Wallet:</div>
-          <div className="pl-7 w-full">
+          <div className="ml-16 w-full">
             <WalletButton />
           </div>
         </div>

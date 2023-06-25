@@ -148,9 +148,11 @@ const LeftNavigator = (props: LeftNavigatorProp) => {
           }}
         />
       </div>
-      <div className="w-3/4 h-px justify-center bg-slate-200"></div>
-      <div className="m-5">
-        <ProfileImage></ProfileImage>
+      <div className="flex flex-col justify-center items-center w-full h-full">
+        <div className="w-3/4 h-px justify-center bg-slate-200"></div>
+        <div className="m-5">
+          <ProfileImage></ProfileImage>
+        </div>
       </div>
     </div>
   );
