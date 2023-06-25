@@ -1,0 +1,19 @@
+.wallet-adapter-button-trigger {
+  background-color: rgb(126 34 206);
+  width: 100%;
+}
+
+.wallet-adapter-button {
+  flex: auto;
+  justify-content: center;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.wallet-adapter-dropdown {
+  width: 100%;
+}
+
+.wallet-adapter-dropdown-list {
+  width: 100%;
+}

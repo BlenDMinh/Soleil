@@ -19,19 +19,19 @@ const App = (props: AppProps) => {
   const [timeoutEvent, setTimeoutEvent] = useState<NodeJS.Timeout>();
   const location = useLocation();
 
-  const { connected } = useWallet();
+  const { connected, connecting, disconnecting } = useWallet();
 
   useEffect(() => {
+    console.log("Connecting:", connecting);
+    if (location.pathname == "/welcome") return;
+    if (disconnecting) navigate("/welcome");
     console.log("Wallet connection: ", connected);
     if (!connected) return;
-    if (location.pathname == "/welcome") return;
-    return () => {
-      if (!anchorWallet) {
-        console.log("Wallet is not connected");
-        navigate("/welcome");
-      }
-    };
-  }, [connected]);
+    if (!anchorWallet) {
+      console.log("Wallet is not connected");
+      navigate("/welcome");
+    }
+  }, [connected, connecting, disconnecting]);
 
   const { isUserInit } = useUser();
 
@@ -51,7 +51,7 @@ const App = (props: AppProps) => {
   }, [isUserInit, anchorWallet]);
 
   return (
-    <div className="h-full flex justify-start w-full">
+    <div className="h-full flex justify-between w-full">
       <LeftNavigator id={props.id} />
       <div className="h-full min-h-screen w-full bg-zinc-100">
         {props.children}

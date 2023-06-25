@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import UserService from "../../service/UserService";
 import { useNavigate } from "react-router-dom";
 import WalletButton from "../component/WalletButton";
-import { useAnchorWallet } from "@solana/wallet-adapter-react";
+import { useAnchorWallet, useWallet } from "@solana/wallet-adapter-react";
 import App from "../App";
 
 const Welcome = () => {
@@ -11,9 +11,13 @@ const Welcome = () => {
   const anchorWallet = useAnchorWallet();
   const userService = UserService.getInstance();
 
+  const { disconnecting, connected } = useWallet();
+
   useEffect(() => {
     userService.wallet = anchorWallet;
-    if (userService.wallet) {
+    if (disconnecting) return;
+
+    if (connected && userService.wallet) {
       navigate("/");
     }
   }, [anchorWallet]);

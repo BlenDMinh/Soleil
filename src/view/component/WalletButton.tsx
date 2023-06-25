@@ -8,9 +8,5 @@ const WalletButton: FC = () => {
 export default WalletButton;
 
 const Content: FC = () => {
-  return (
-    <div>
-      <WalletMultiButton />
-    </div>
-  );
+  return <WalletMultiButton />;
 };
