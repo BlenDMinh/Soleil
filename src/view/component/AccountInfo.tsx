@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import SolanaService from "../../service/SolanaService";
 import UserService from "../../service/UserService";
-import { LAMPORTS_PER_SOL, PublicKey } from "@solana/web3.js";
+import { LAMPORTS_PER_SOL } from "@solana/web3.js";
 import "react-activity/dist/library.css";
 import { Spinner } from "react-activity";
 import { Divider } from "@fluentui/react-divider";
@@ -50,6 +50,7 @@ const AccountInfo = () => {
       <a
         className="h-1/3 text-lg font-bold text-purple-600"
         href={solanaService.getURL(userService.wallet!.publicKey)}
+        target="_blank"
       >
         View your Solana Account
       </a>

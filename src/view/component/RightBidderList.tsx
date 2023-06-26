@@ -10,7 +10,7 @@ interface BidderInfoProp {
 const Bidder = (props: BidderInfoProp) => {
   return (
     <div className=" flex w-full flex-row justify-between">
-      <div className="flex flex-row">
+      <div className="flex flex-row gap-5">
         <img
           src={props.image}
           alt="Bidder information"
@@ -61,7 +61,7 @@ const NewActivity = (props: NewActivityInfo) => {
 
 const RightBidderList = () => {
   return (
-    <div className="sticky top-0 w-[24%] min-w-[24%] h-full min-h-screen hidden md:block flex-col justify-center items-center bg-white shadow-xl">
+    <div className="sticky top-0 w-[24%] min-w-[24%] h-full max-h-screen min-h-screen hidden md:block flex-col justify-center items-center bg-white shadow-xl">
       <div className="w-full flex flex-col items-start px-5">
         <div className="text-black sticky font-semibold text-2xl mt-8 flex flex-row justify-between w-full">
           <div className="mt-2">Wallet:</div>
@@ -73,8 +73,8 @@ const RightBidderList = () => {
         <div className="text-black sticky font-semibold text-2xl mt-8">
           Top Bidder
         </div>
-        <div className="w-full h-[20rem] flex items-center flex-col overflow-y-scroll">
-          <div className="w-1/2 h-px items-center bg-slate-200"></div>
+        <div className="w-full h-48 flex items-center flex-col overflow-y-scroll">
+          {/* <div className="w-1/2 h-px items-center bg-slate-200"></div> */}
           <div className="mt-6 w-full px-5 gap-3 flex flex-col">
             <Bidder
               name="Anh Minh"
@@ -139,8 +139,8 @@ const RightBidderList = () => {
         </div>
         <div className="w-full h-60 overflow-y-scroll flex items-center flex-col">
           <div>
-            <div className="w-1/2 h-px items-center bg-slate-200"></div>
-            <div className="mt-6 w-full px-5">
+            {/* <div className="w-1/2 h-px items-center bg-slate-200"></div> */}
+            <div className="w-full px-5">
               <NewActivity
                 title="New Bid Appeared"
                 content="Dang Ngoc Nam has placed higher bid on this postasdfadf"

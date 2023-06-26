@@ -13,6 +13,7 @@ import Help from "./view/page/Help.tsx";
 import { UserProvider } from "./context/UserContext.tsx";
 import CreateUser from "./view/page/CreateUser.tsx";
 import EditProfile from "./view/page/EditProfile.tsx";
+import ProgramProvider from "./context/ProgramContext.tsx";
 
 const router = createBrowserRouter([
   {
@@ -55,10 +56,12 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <SoleilWalletProvider>
-    <UserProvider>
-      <React.StrictMode>
-        <RouterProvider router={router} />
-      </React.StrictMode>
-    </UserProvider>
+    <ProgramProvider>
+      <UserProvider>
+        <React.StrictMode>
+          <RouterProvider router={router} />
+        </React.StrictMode>
+      </UserProvider>
+    </ProgramProvider>
   </SoleilWalletProvider>
 );

@@ -106,21 +106,20 @@ const LeftNavigator = (props: LeftNavigatorProp) => {
         />
         <MenuButton
           isSelected={id == 1}
-          icon={<IconGi.GiEarthAmerica size="22" />}
-          text={"Auction"}
-          onClick={() => {
-            navigate("/auction");
-          }}
-        />
-        <MenuButton
-          isSelected={id == 2}
           icon={<IconFa.FaDonate size="22" />}
           text={"Donate"}
           onClick={() => {
             navigate("/donate");
           }}
         />
-
+        <MenuButton
+          isSelected={id == 2}
+          icon={<IconGi.GiEarthAmerica size="22" />}
+          text={"Auction"}
+          onClick={() => {
+            navigate("/auction");
+          }}
+        />
         <MenuButton
           isSelected={id == 3}
           icon={<IconBi.BiLayerPlus size="22" />}

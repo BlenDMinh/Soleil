@@ -1,10 +1,6 @@
 import { useNavigate } from "react-router";
-import React from "react";
 import App from "../App";
-import * as IconFa from "react-icons/fa";
 import * as IconBs from "react-icons/bs";
-import * as IconAi from "react-icons/ai";
-import Modal from "react-modal";
 import { AuctionItem } from "../component/AuctionItem";
 
 function Home() {

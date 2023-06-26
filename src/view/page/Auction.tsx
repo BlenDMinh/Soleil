@@ -1,10 +1,5 @@
-import LeftNavigator from "../component/LeftNavigator";
-import RightBidderList from "../component/RightBidderList";
 import * as IconBs from "react-icons/bs";
 import * as IconBi from "react-icons/bi";
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { Line } from "react-chartjs-2";
 import App from "../App";
 import SearchBar from "../component/SearchBar";
 import { AuctionItem } from "../component/AuctionItem";
@@ -15,7 +10,7 @@ function Auction() {
     console.log("Searching for:", query);
   };
   return (
-    <App id={1}>
+    <App id={2}>
       <div className="min-h-screen h-full w-full flex flex-col items-center bg-zinc-100 px-16 pt-6">
         <div className="w-full flex flex-col items-start gap-6">
           <div className="rounded-xl shadow-2xl w-full bg-white items-center flex flex-row">
@@ -36,7 +31,6 @@ function Auction() {
                     This auction is non-profit and all proceeds will go towards
                     charitable causes.
                   </div>
-
                   <SearchBar onSearch={handleSearch}></SearchBar>
                 </div>
               </div>
@@ -59,13 +53,12 @@ function Auction() {
             </div>
           </div>
           <div className="w-full h-[20rem] grid grid-cols-1 gap-16 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 items-center flex-col overflow-y-scroll">
-            <AuctionItem image="src/assets/images/monkeynft.jpeg"></AuctionItem>
-
-            <AuctionItem image="src/assets/images/monkeynft3.jpeg"></AuctionItem>
-            <AuctionItem image="src/assets/images/monkeynft4.jpeg"></AuctionItem>
-            <AuctionItem image="src/assets/images/monkeynft5.jpeg"></AuctionItem>
-            <AuctionItem image="src/assets/images/monkeynft6.jpeg"></AuctionItem>
-            <AuctionItem image="src/assets/images/monkeynft7.jpeg"></AuctionItem>
+            <AuctionItem image="/src/assets/images/monkeynft.jpeg"></AuctionItem>
+            <AuctionItem image="/src/assets/images/monkeynft3.jpeg"></AuctionItem>
+            <AuctionItem image="/src/assets/images/monkeynft4.jpeg"></AuctionItem>
+            <AuctionItem image="/src/assets/images/monkeynft5.jpeg"></AuctionItem>
+            <AuctionItem image="/src/assets/images/monkeynft6.jpeg"></AuctionItem>
+            <AuctionItem image="/src/assets/images/monkeynft7.jpeg"></AuctionItem>
           </div>
           <div className="flex justify-between items-center w-full">
             <div className="text-3xl font-bold text-gray-700 flex flex-row gap-2">
@@ -84,12 +77,12 @@ function Auction() {
             </div>
           </div>
           <div className="w-full h-[20rem] grid grid-cols-1 gap-16 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 items-center flex-col overflow-y-scroll">
-            <AuctionItem image="src/assets/images/monkeynft8.jpeg"></AuctionItem>
-            <AuctionItem image="src/assets/images/monkeynft7.jpeg"></AuctionItem>
-            <AuctionItem image="src/assets/images/monkeynft6.jpeg"></AuctionItem>
-            <AuctionItem image="src/assets/images/monkeynft5.jpeg"></AuctionItem>
-            <AuctionItem image="src/assets/images/monkeynft4.jpeg"></AuctionItem>
-            <AuctionItem image="src/assets/images/monkeynft3.jpeg"></AuctionItem>
+            <AuctionItem image="/src/assets/images/monkeynft8.jpeg"></AuctionItem>
+            <AuctionItem image="/src/assets/images/monkeynft7.jpeg"></AuctionItem>
+            <AuctionItem image="/src/assets/images/monkeynft6.jpeg"></AuctionItem>
+            <AuctionItem image="/src/assets/images/monkeynft5.jpeg"></AuctionItem>
+            <AuctionItem image="/src/assets/images/monkeynft4.jpeg"></AuctionItem>
+            <AuctionItem image="/src/assets/images/monkeynft3.jpeg"></AuctionItem>
           </div>
         </div>
       </div>

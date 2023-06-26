@@ -1,15 +1,14 @@
-import { createContext, useContext, useEffect, useMemo, useState } from "react";
-import idl from "../idl/solei.json";
+import { createContext, useContext, useEffect, useState } from "react";
 import {
   useAnchorWallet,
   useConnection,
   useWallet,
 } from "@solana/wallet-adapter-react";
-import { AnchorProvider, Idl, Program } from "@project-serum/anchor";
 import { findProgramAddressSync } from "@project-serum/anchor/dist/cjs/utils/pubkey";
 import { SystemProgram, TransactionResponse } from "@solana/web3.js";
 import { utf8 } from "@project-serum/anchor/dist/cjs/utils/bytes";
 import { User } from "../model/User";
+import { useProgram } from "./ProgramContext";
 
 const MAX_PING = 5;
 
@@ -50,16 +49,7 @@ export const UserProvider = ({ children }: any) => {
 
   const [onTrans, setOnTrans] = useState<boolean>(false);
 
-  const program = useMemo(() => {
-    if (anchorWallet) {
-      const provider = new AnchorProvider(
-        connection,
-        anchorWallet,
-        AnchorProvider.defaultOptions()
-      );
-      return new Program(idl as Idl, idl.metadata.address, provider);
-    }
-  }, [connection, anchorWallet]);
+  const { program } = useProgram();
 
   useEffect(() => {
     const start = async () => {
