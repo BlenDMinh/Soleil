@@ -1,6 +1,6 @@
-import { AnchorProvider, Idl, Program } from "@project-serum/anchor";
+import { AnchorProvider, Idl, Program } from "@coral-xyz/anchor";
 import { useAnchorWallet, useConnection } from "@solana/wallet-adapter-react";
-import { createContext, useContext, useMemo } from "react";
+import { createContext, useContext, useEffect, useMemo } from "react";
 import idl from "../idl/solei.json";
 
 const ProgramContext = createContext<{
@@ -28,9 +28,23 @@ const ProgramProvider = ({ children }: any) => {
         anchorWallet,
         AnchorProvider.defaultOptions()
       );
-      return new Program(idl as Idl, idl.metadata.address, provider);
+
+      const program = new Program(idl as Idl, idl.metadata.address, provider);
+      return program;
     }
   }, [anchorWallet, connection]);
+
+  useEffect(() => {
+    const start = async () => {
+      if (program) {
+        console.log("Listening DevEvent");
+        program.addEventListener("DevEvent", (event, slot) => {
+          console.log(event, slot);
+        });
+      }
+    };
+    start();
+  }, [program]);
 
   return (
     <ProgramContext.Provider

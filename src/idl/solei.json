@@ -55,6 +55,12 @@
       }
     }
   ],
+  "events": [
+    {
+      "name": "DevEvent",
+      "fields": [{ "name": "msg", "type": "string", "index": false }]
+    }
+  ],
   "metadata": {
     "address": "amiomHiY7zSrY8Y1bkXhhAe4mUnanGSkeduNhk4mk4N"
   }

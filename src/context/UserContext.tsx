@@ -4,9 +4,8 @@ import {
   useConnection,
   useWallet,
 } from "@solana/wallet-adapter-react";
-import { findProgramAddressSync } from "@project-serum/anchor/dist/cjs/utils/pubkey";
-import { SystemProgram, TransactionResponse } from "@solana/web3.js";
-import { utf8 } from "@project-serum/anchor/dist/cjs/utils/bytes";
+import { PublicKey, SystemProgram, TransactionResponse } from "@solana/web3.js";
+import { utf8 } from "@coral-xyz/anchor/dist/cjs/utils/bytes";
 import { User } from "../model/User";
 import { useProgram } from "./ProgramContext";
 
@@ -55,7 +54,7 @@ export const UserProvider = ({ children }: any) => {
     const start = async () => {
       if (program && publicKey) {
         try {
-          const [pda] = await findProgramAddressSync(
+          const [pda] = await PublicKey.findProgramAddressSync(
             [utf8.encode("soleil_user"), publicKey.toBuffer()],
             program.programId
           );
@@ -79,7 +78,7 @@ export const UserProvider = ({ children }: any) => {
   const createUser = async (name: string, avatar: string) => {
     setOnTrans(true);
     if (program && publicKey) {
-      const [pda] = findProgramAddressSync(
+      const [pda] = PublicKey.findProgramAddressSync(
         [utf8.encode("soleil_user"), publicKey.toBuffer()],
         program.programId
       );
@@ -106,7 +105,7 @@ export const UserProvider = ({ children }: any) => {
   const editUser = async (name: string, avatar: string) => {
     setOnTrans(true);
     if (program && publicKey) {
-      const [pda] = findProgramAddressSync(
+      const [pda] = PublicKey.findProgramAddressSync(
         [utf8.encode("soleil_user"), publicKey.toBuffer()],
         program.programId
       );

@@ -1,20 +1,20 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\anhmi\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add @types/afuggini__namegenerator
+  C:\Program Files\nodejs\node.exe C:\Users\anhmi\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add @coral-xyz/anchor^0.27.0
 
 PATH: 
-  C:\Program Files\PowerShell\7;C:\Program Files\OpenSSH\;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.3\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.3\libnvvp;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Eclipse Foundation\jdk-16.0.2.7-hotspot\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\msys64\mingw64\bin;C:\Program Files\Java\jdk-19\bin;C:\Program Files\Git\cmd;C:\Windows\Microsoft.NET\Framework64\v4.0.30319;C:\Program Files\dotnet\;C:\Program Files\NVIDIA Corporation\Nsight Compute 2021.1.0\;C:\Program Files\Graphviz\bin;C:\dart-sdk\bin;C:\Program Files\Java\jdk-19\bin;C:\Program Files (x86)\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\Azure Data Studio\bin;C:\Program Files\PowerShell\7\;C:\Program Files\nodejs\;C:\Users\anhmi\.local\share\solana\install\active_release\bin;C:\Users\anhmi\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\anhmi\AppData\Local\Programs\Python\Python310\;C:\Users\anhmi\AppData\Local\Microsoft\WindowsApps;C:\Users\anhmi\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\anhmi\AppData\Local\GitHubDesktop\bin;C:\Users\anhmi\AppData\Local\Programs\oh-my-posh\bin;C:\Users\anhmi\.dotnet\tools;C:\Program Files\Azure Data Studio\bin;C:\Users\anhmi\AppData\Roaming\npm
+  C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Users\anhmi\.avm\bin;C:\Program Files\Git\cmd;C:\Users\anhmi\.local\share\solana\install\active_release\bin;C:\Users\anhmi\.cargo\bin;C:\Users\anhmi\AppData\Local\Microsoft\WindowsApps;C:\Users\anhmi\AppData\Roaming\npm;C:\Users\anhmi\AppData\Local\GitHubDesktop\bin;C:\Users\anhmi\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\anhmi\AppData\Local\Programs\oh-my-posh\bin
 
 Yarn version: 
   1.22.19
 
 Node version: 
-  18.16.0
+  18.16.1
 
 Platform: 
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@types%2fafuggini__namegenerator: Not found
+  Error: https://registry.yarnpkg.com/@coral-xyz%2fanchor%5E0.27.0: Not found
       at params.callback [as _callback] (C:\Users\anhmi\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66145:18)
       at self.callback (C:\Users\anhmi\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140890:22)
       at Request.emit (node:events:513:28)
@@ -44,7 +44,6 @@ npm manifest:
       "@dicebear/collection": "^6.0.4",
       "@dicebear/core": "^6.0.4",
       "@fluentui/react-divider": "^9.2.15",
-      "@project-serum/anchor": "^0.26.0",
       "@solana/wallet-adapter-base": "^0.9.22",
       "@solana/wallet-adapter-react": "^0.15.32",
       "@solana/wallet-adapter-react-ui": "^0.9.31",
@@ -898,27 +897,6 @@ Lockfile:
     version "1.0.1"
     resolved "https://registry.npmjs.org/@pedrouid/environment/-/environment-1.0.1.tgz"
     integrity sha512-HaW78NszGzRZd9SeoI3JD11JqY+lubnaOx7Pewj5pfjqWXOEATpeKIFb9Z4t2WBUK2iryiXX3lzWwmYWgUL0Ug==
-  
-  "@project-serum/anchor@^0.26.0":
-    version "0.26.0"
-    resolved "https://registry.npmjs.org/@project-serum/anchor/-/anchor-0.26.0.tgz"
-    integrity sha512-Nq+COIjE1135T7qfnOHEn7E0q39bQTgXLFk837/rgFe6Hkew9WML7eHsS+lSYD2p3OJaTiUOHTAq1lHy36oIqQ==
-    dependencies:
-      "@coral-xyz/borsh" "^0.26.0"
-      "@solana/web3.js" "^1.68.0"
-      base64-js "^1.5.1"
-      bn.js "^5.1.2"
-      bs58 "^4.0.1"
-      buffer-layout "^1.2.2"
-      camelcase "^6.3.0"
-      cross-fetch "^3.1.5"
-      crypto-hash "^1.3.0"
-      eventemitter3 "^4.0.7"
-      js-sha256 "^0.9.0"
-      pako "^2.0.3"
-      snake-case "^3.0.4"
-      superstruct "^0.15.4"
-      toml "^3.0.0"
   
   "@project-serum/sol-wallet-adapter@0.2.0":
     version "0.2.0"
